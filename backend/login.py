@@ -1,4 +1,8 @@
-from app.telegram.client import client
+from app.telegram.client import criarClient
+
+sessionNome = input("Nome da sessão: ")
+
+client = criarClient(sessionNome)
 
 async def main():
 

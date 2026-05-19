@@ -7,8 +7,10 @@ load_dotenv()
 api_id = os.getenv("API_ID")
 api_hash = os.getenv("API_HASH")
 
-client = TelegramClient(
-    "sessions/main",
-    api_id,
-    api_hash
-)
+def criarClient(sessionNome: str):
+
+    return TelegramClient(
+        f"sessions/{sessionNome}",
+        api_id,
+        api_hash
+    )
