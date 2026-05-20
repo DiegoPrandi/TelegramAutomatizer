@@ -1,15 +1,15 @@
 from fastapi import APIRouter
-from app.telegram.client import client
+from app.telegram.client import criarClient
 
 router = APIRouter()
 
 @router.get("/")
 async def auth():
 
-    await client.connect()
+    await criarClient.connect()
 
-    if await client.is_user_authorized():
-        me = await client.get_me()
+    if await criarClient.is_user_authorized():
+        me = await criarClient.get_me()
 
         return {
             "status": "funfando",
